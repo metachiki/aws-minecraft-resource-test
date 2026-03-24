@@ -1,0 +1,92 @@
+- name: AWS Server Initial Setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create 2GB Swap file if it doesn't exist
+      command: |
+        sh -c 'if [ ! -f /swapfile ]; then
+          fallocate -l 2G /swapfile &&
+          chmod 600 /swapfile &&
+          mkswap /swapfile &&
+          swapon /swapfile &&
+          echo "/swapfile none swap sw 0 0" >> /etc/fstab
+        fi'
+      register: swap_result
+      changed_when: "'mkswap' in swap_result.stdout"
+
+    - name: Check memory status
+      command: free -h
+      register: mem_info
+
+    - name: Show memory status
+      debug:
+        var: mem_info.stdout_lines
+- name: AWS Server Initial Setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create 2GB Swap file if it doesn't exist
+      command: |
+        sh -c 'if [ ! -f /swapfile ]; then
+          fallocate -l 2G /swapfile &&
+          chmod 600 /swapfile &&
+          mkswap /swapfile &&
+          swapon /swapfile &&
+          echo "/swapfile none swap sw 0 0" >> /etc/fstab
+        fi'
+      register: swap_result
+      changed_when: "'mkswap' in swap_result.stdout"
+
+    - name: Check memory status
+      command: free -h
+      register: mem_info
+
+    - name: Show memory status
+      debug:
+        var: mem_info.stdout_lines
+- name: AWS Server Initial Setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create 2GB Swap file if it doesn't exist
+      command: |
+        sh -c 'if [ ! -f /swapfile ]; then
+          fallocate -l 2G /swapfile &&
+          chmod 600 /swapfile &&
+          mkswap /swapfile &&
+          swapon /swapfile &&
+          echo "/swapfile none swap sw 0 0" >> /etc/fstab
+        fi'
+      register: swap_result
+      changed_when: "'mkswap' in swap_result.stdout"
+
+    - name: Check memory status
+      command: free -h
+      register: mem_info
+
+    - name: Show memory status
+      debug:
+        var: mem_info.stdout_lines
+- name: AWS Server Initial Setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create 2GB Swap file if it doesn't exist
+      command: |
+        sh -c 'if [ ! -f /swapfile ]; then
+          fallocate -l 2G /swapfile &&
+          chmod 600 /swapfile &&
+          mkswap /swapfile &&
+          swapon /swapfile &&
+          echo "/swapfile none swap sw 0 0" >> /etc/fstab
+        fi'
+      register: swap_result
+      changed_when: "'mkswap' in swap_result.stdout"
+
+    - name: Check memory status
+      command: free -h
+      register: mem_info
+
+    - name: Show memory status
+      debug:
+        var: mem_info.stdout_lines
