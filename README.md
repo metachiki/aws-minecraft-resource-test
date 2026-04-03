@@ -38,7 +38,3 @@
 -  ※4/1追記：クラウド移行: AWSからOracle Cloud (Always Free) へ環境を移行。
 
 ・理由: スペック（メモリ等）のコストパフォーマンスと、長期的な運用（24時間稼働）を重視して判断。
-### 実行コマンド
-```bash
-ansible-playbook setup_server.yml -u ubuntu --private-key=./your-key.pem
-\```
